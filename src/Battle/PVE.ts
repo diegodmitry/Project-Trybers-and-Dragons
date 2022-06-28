@@ -20,11 +20,11 @@ class PVE extends Battle {
       // this.player.attack(this.enemy.forEach((enemy) => this.enemy));
 
       // this.enemy.attack(this.player);
-      // this.enemy.forEach((npc) => {
-      //   this.player.attack(npc);
-      //   npc.attack(this.player);
-      // })
-      this.player.attack(this.enemy[0])
+      this.enemy.forEach((npc) => {
+        this.player.attack(npc);
+        npc.attack(this.player);
+      })
+      // this.player.attack(this.enemy[0])
     }
 
     // return this.player.lifePoints === -1 ? -1 : 1;
