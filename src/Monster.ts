@@ -3,7 +3,7 @@ import { SimpleFighter } from './Fighter';
 // To resolve Req 9 - I needed create a Monster class and import
 // SimpleFighter interface into Character class.(attack method)
 class Monster implements SimpleFighter {
-  private _lifePoints: number;
+  _lifePoints: number;
   private _strength: number;
 
   constructor() {
