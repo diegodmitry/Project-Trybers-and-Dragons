@@ -1,11 +1,14 @@
-import Fighter, { SimpleFighter } from "../Fighter";
+import Fighter, { SimpleFighter } from '../Fighter';
 import Character from '../Character';
-import Battle from "./Battle";
+import Battle from './Battle';
 
 class PVE extends Battle {
   enemy: (SimpleFighter | Fighter)[];
   
-  constructor(player1: Fighter | Character, enemy: (SimpleFighter | Fighter)[]) {
+  constructor(
+    player1: Fighter | Character,
+    enemy: (SimpleFighter | Fighter)[],
+  ) {
     super(player1);
     this.enemy = enemy;
   }
@@ -13,7 +16,8 @@ class PVE extends Battle {
   fight(): number {
     const playerIsAlive = this.player.lifePoints > 0;
     // const enemyIsAlive = this.enemy.lifePoints > 0;
-    const enemyIsAlive = this.enemy.every((character) => character.lifePoints > 0);
+    const enemyIsAlive = this.enemy
+      .every((character) => character.lifePoints > 0);
 
     if (playerIsAlive && enemyIsAlive) {
       // this.player.attack(this.enemy);
@@ -23,7 +27,7 @@ class PVE extends Battle {
       this.enemy.forEach((npc) => {
         this.player.attack(npc);
         npc.attack(this.player);
-      })
+      });
       // this.player.attack(this.enemy[0])
     }
 
